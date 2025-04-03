@@ -1,0 +1,140 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ff9a9e, #fecfef);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 15px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px; 
+    animation: fadeIn 2s;
+}
+
+.message-container h1 {
+    color: #ff6f91;
+    font-size: 1.8em; 
+    margin-bottom: 10px;
+}
+
+.message-container p {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 8px; 
+}
+
+.signature {
+    font-style: italic;
+    font-size: 0.9em; 
+    color: #ff6f91;
+}
+
+.balloons {
+    position: relative;
+    margin-top: 15px; 
+    height: 130px; 
+    overflow: hidden;
+}
+
+.balloon {
+    position: absolute;
+    width: 35px; 
+    height: 45px;
+    background: #ffc4e1;
+    border-radius: 50%;
+    animation: float 4s infinite;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.balloon:nth-child(2) {
+    background: #ff9a9e;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.balloon:nth-child(3) {
+    background: #fff176;
+    left: 75%;
+    animation-delay: 3s;
+}
+
+.gallery-button {
+    margin-top: 15px; 
+    padding: 8px 18px; 
+    background: #6a67ce;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s;
+}
+
+.gallery-button:hover {
+    background: #574b90;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        bottom: -50px;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-10px);
+    }
+    100% {
+        bottom: 150%;
+        transform: translateX(10px);
+    }
+}
+@media (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas más pequeñas */
+    }
+
+    .gallery img {
+        max-width: 150px; /* Reducir tamaño de las imágenes */
+        height: 150px;    /* Ajustar proporción */
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr); /* Una columna para pantallas muy pequeñas */
+    }
+
+    .gallery-container h1 {
+        font-size: 1.5em; /* Reducir tamaño del título */
+    }
+
+    .gallery img {
+        max-width: 130px; /* Aún más pequeño en pantallas pequeñas */
+        height: 130px;
+    }
+
+    .gallery-button {
+        font-size: 0.9em; /* Reducir tamaño del botón */
+        padding: 10px 20px;
+    }
+}
